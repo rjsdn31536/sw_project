@@ -72,7 +72,27 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
-            <span style="color:white">검색내역</span>
+            <span style="color:white">즐겨찾기</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown" style="width:100%;overflow:auto;height:450px;">
+            <ul style="padding:0;border-bottom:1px solid black;text-align:center ">
+              <li style="display:block">내역 : {{park_want_len}}건 </li>
+            </ul>
+            <ul class='dropdownList'>
+              {% for i in range(park_want_len) %}
+              <a href="http://www.publicparking.kr/details/{{park_code_list[i]}}" target="_blank" style="color:black">
+                <li>
+                  <h3 style="text-align:center">{{park_want_list[i]}}</h3>
+                </li>
+              </a>
+              {% endfor %}
+            </ul>  
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span style="color:white">이용내역</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown" style="width:100%;overflow:auto;height:450px;">
             <ul style="padding:0;border-bottom:1px solid black;text-align:center ">
@@ -90,16 +110,13 @@
           </div>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="">데이터 Lab</a>
-        </li>
-        <li class="sidebar-nav-item">
             <a class="js-scroll-trigger" href="">추천 서비스</a>
         </li>
         <li class="sidebar-nav-item">
             <a class="js-scroll-trigger" href="">제휴 서비스</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="">코인 거래</a>
+            <a class="js-scroll-trigger" href="">파콧머니 충전, 출금</a>
         </li>
       </ul>
     </nav>
