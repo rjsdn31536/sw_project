@@ -61,13 +61,36 @@
           <a class="js-scroll-trigger" href="#page-top">{{session['ID']}} 님</a>
         </li>
         <li class="sidebar-nav-item" style="margin-top:10px">
-          <a class="js-scroll-trigger" href="/member">파콧 머니　 :     0원<br>파콧 포인트 :     0원</a>
+          <a class="js-scroll-trigger" href="/member">파콧 머니　 : 36000원<br>파콧 포인트 :     0원<br>쿠 폰      :  1개</a>
         </li>
         <li class="sidebar-nav-item" style="margin-top:5px;margin-left:5px">
             <a class="js-scroll-trigger" href="/search/logout" style="border:1px solid #e5e8ef;width:100px;height:30px;text-align:center;padding-top:3px">로그아웃</a>
         </li>
         <li class="sidebar-nav-item" style="margin-top:10px">
-          <a class="js-scroll-trigger" href="/member">정보수정</a>
+          <a class="js-scroll-trigger" href="/member">공지사항</a>
+        </li>
+        <li class="sidebar-nav-item" style="margin-top:10px">
+          <a class="js-scroll-trigger" href="/member">주차장 제휴 의뢰</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span style="color:white">내 주차권/span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown" style="width:100%;overflow:auto;height:450px;">
+            <ul style="padding:0;border-bottom:1px solid black;text-align:center ">
+              <li style="display:block">내역 : {{park_want_len}}건 </li>
+            </ul>
+            <ul class='dropdownList'>
+              {% for i in range(park_want_len) %}
+              <a href="http://www.publicparking.kr/details/{{park_code_list[i]}}" target="_blank" style="color:black">
+                <li>
+                  <h3 style="text-align:center">{{park_want_list[i]}}</h3>
+                </li>
+              </a>
+              {% endfor %}
+            </ul>  
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
